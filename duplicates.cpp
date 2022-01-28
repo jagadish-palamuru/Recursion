@@ -5,11 +5,18 @@ void duplicates(string s)
 {
     if(s.length()==0)
         return;
-    duplicates(s.substr(1));
-    cout<<s[0];
+
+   
+    if(s[0]==s.substr(1)[0])
+        duplicates(s.substr(1));
+    else
+    {    cout<<s[0];
+         duplicates(s.substr(1));
+    }
+    
 }
 int main()
 {
-    duplicates("loathe");
+    duplicates("llloaaaaaalaaaaaaaaathe");
     return 0;
 }
